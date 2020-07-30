@@ -73,7 +73,7 @@ public class GardenRecyclerAdapter extends ListAdapter<PlantBean, GardenRecycler
 
         public void bind(PlantBean bean){
 
-            bind.setViewModel(new PlantAndGardenViewModel(bean));
+            bind.setViewModel(bean);
 //            binding.executePendingBindings();
         }
     }

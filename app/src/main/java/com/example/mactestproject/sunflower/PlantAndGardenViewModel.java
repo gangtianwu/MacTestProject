@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class PlantAndGardenViewModel extends ViewModel {
+public class PlantAndGardenViewModel  {
 //    private List<PlantBean> data;
     private PlantBean bean;
     public PlantAndGardenViewModel(PlantBean bean) {
