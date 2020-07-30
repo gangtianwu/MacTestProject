@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MacTestProject</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="view_centering">CENTERING VIEW</string>
+    <string name="basic_arrange">BASIC_ARRANGE</string>
+    <string name="guide_lines">GUIDE_LINES</string>
+    <string name="arrange_ment">ADVANCED ARRANGEMENT</string>
+    <string name="aspect_ratio">ASPECT RATIO</string>
+    <string name="basic_chains">BASIC CHAINS</string>
+    <string name="constraint_set">CONSTRAINTSET</string>
+    <string name="advanced_chains">ADVANCED CHAINS</string>
+    <string name="basic_centering">Basic Centering</string>
+    <string name="centered_button">CENTERED BUTTON</string>
+    <string name="title">Arrange</string>
+    <string name="advanced_title">Advanced Arrange</string>
+    <string name="aspect_ratio_value">Aspect Ratio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
