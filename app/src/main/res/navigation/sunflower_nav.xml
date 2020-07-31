@@ -22,5 +22,19 @@
         <action
             android:id="@+id/action_secondFragment_to_firstFragment2"
             app:destination="@id/firstFragment2" />
+        <argument
+            android:name="data"
+            app:argType="com.example.mactestproject.sunflower.PlantBean"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
     </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/plaintFragment"-->
+<!--        android:name="com.example.mactestproject.sunflower.PlaintFragment"-->
+<!--        android:label="PlaintFragment" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_plaintFragment_to_secondFragment"-->
+<!--            app:destination="@id/secondFragment" />-->
+<!--    </fragment>-->
 </navigation>

@@ -18,7 +18,7 @@ import com.example.mactestproject.databinding.ItemGardenBinding;
 
 import java.util.List;
 
-import static com.example.mactestproject.MainActivity.TAG;
+import static com.example.mactestproject.sunflower.Config.TAG;
 
 public class GardenRecyclerAdapter extends ListAdapter<PlantBean, GardenRecyclerAdapter.GardenViewHolder> {
 
@@ -72,7 +72,7 @@ public class GardenRecyclerAdapter extends ListAdapter<PlantBean, GardenRecycler
         }
 
         public void bind(PlantBean bean){
-
+            Log.i(TAG, "bind: "+ bean.getName());
             bind.setViewModel(bean);
 //            binding.executePendingBindings();
         }

@@ -29,7 +29,7 @@ public class GardenFragment extends androidx.fragment.app.Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        gardenBinding.setHasPlantings(true);
+        gardenBinding.setHasPlantings(false);
         GardenRecyclerAdapter gardenRecyclerAdapter = new GardenRecyclerAdapter(new DiffUtil.ItemCallback<PlantBean>() {
             @Override
             public boolean areItemsTheSame(@NonNull PlantBean oldItem, @NonNull PlantBean newItem) {

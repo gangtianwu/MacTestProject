@@ -12,8 +12,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.mactestproject.R;
+
+import java.io.Serializable;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,6 +89,11 @@ public class SecondFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         Log.i(TAG, "onActivityCreated: ");
         getView().findViewById(R.id.button32).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_secondFragment_to_firstFragment2));
+        PlantBean data = (PlantBean) getArguments().getSerializable("data");
+        if (data!= null && data.getName() != null){
+            Button button = getView().findViewById(R.id.button32);
+            button.setText(data.getName());
+        }
     }
 
     @Override
