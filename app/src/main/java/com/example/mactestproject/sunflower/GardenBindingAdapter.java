@@ -2,6 +2,7 @@ package com.example.mactestproject.sunflower;
 
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
@@ -21,4 +22,11 @@ public class GardenBindingAdapter {
         Log.i(TAG, "图片加载bindImageFromUrl: " + url);
     }
 
+
+    @BindingAdapter("wateringText")
+    public static void  bindWateringText(TextView view,int text){
+        view.setText("每隔"+text+"天浇水");
+    }
+
 }
+

@@ -88,12 +88,12 @@ public class SecondFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.i(TAG, "onActivityCreated: ");
-        getView().findViewById(R.id.button32).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_secondFragment_to_firstFragment2));
-        PlantBean data = (PlantBean) getArguments().getSerializable("data");
-        if (data!= null && data.getName() != null){
-            Button button = getView().findViewById(R.id.button32);
-            button.setText(data.getName());
-        }
+//        getView().findViewById(R.id.button32).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_secondFragment_to_firstFragment2));
+//        PlantBean data = (PlantBean) getArguments().getSerializable("data");
+//        if (data!= null && data.getName() != null){
+//            Button button = getView().findViewById(R.id.button32);
+//            button.setText(data.getName());
+//        }
     }
 
     @Override

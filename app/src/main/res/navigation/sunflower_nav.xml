@@ -11,17 +11,17 @@
         android:label="fragment_first2"
         tools:layout="@layout/fragment_first2" >
         <action
-            android:id="@+id/action_firstFragment2_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            android:id="@+id/action_firstFragment2_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.example.mactestproject.sunflower.PlantBean" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.mactestproject.sunflower.SecondFragment"
         android:label="fragment_second2"
         tools:layout="@layout/fragment_second2" >
-        <action
-            android:id="@+id/action_secondFragment_to_firstFragment2"
-            app:destination="@id/firstFragment2" />
         <argument
             android:name="data"
             app:argType="com.example.mactestproject.sunflower.PlantBean"
@@ -29,7 +29,15 @@
             android:defaultValue="@null" />
 
     </fragment>
-<!--    <fragment-->
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.example.mactestproject.sunflower.PlantDetailFragment"
+        android:label="PlantDetailFragment" >
+        <action
+            android:id="@+id/action_plantDetailFragment_to_firstFragment2"
+            app:destination="@id/firstFragment2" />
+    </fragment>
+    <!--    <fragment-->
 <!--        android:id="@+id/plaintFragment"-->
 <!--        android:name="com.example.mactestproject.sunflower.PlaintFragment"-->
 <!--        android:label="PlaintFragment" >-->

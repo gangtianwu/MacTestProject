@@ -62,7 +62,7 @@ public class PlaintRecyclerAdapter extends ListAdapter<PlantBean, PlaintRecycler
         private void navigateToPlant(PlantBean plantBean, View v) {
             Bundle bundle = new Bundle();
             bundle.putSerializable("data",plantBean);
-            Navigation.findNavController(v).navigate(R.id.action_firstFragment2_to_secondFragment,bundle);
+            Navigation.findNavController(v).navigate(R.id.action_firstFragment2_to_plantDetailFragment,bundle);
         }
 
 //        public GardenViewHolder(@NonNull View itemView) {
