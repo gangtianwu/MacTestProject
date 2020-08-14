@@ -25,7 +25,8 @@ public class FirstActivity extends AppCompatActivity {
         findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FirstActivity.this, ViewModelActivity.class));
+//                startActivity(new Intent(FirstActivity.this, ViewModelActivity.class));
+                startActivity(new Intent(FirstActivity.this, SecondActivity.class));
             }
         });
         Log.i(TAG, "onCreate: ");

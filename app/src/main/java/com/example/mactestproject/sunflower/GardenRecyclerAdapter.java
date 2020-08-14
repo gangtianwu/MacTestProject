@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mactestproject.BR;
 import com.example.mactestproject.R;
 import com.example.mactestproject.databinding.ItemGardenBinding;
 
@@ -74,7 +75,8 @@ public class GardenRecyclerAdapter extends ListAdapter<PlantBean, GardenRecycler
         public void bind(PlantBean bean){
             Log.i(TAG, "bind: "+ bean.getName());
             bind.setViewModel(bean);
-//            binding.executePendingBindings();
+            bind.setVariable(BR.plant_bean,bean);
+            bind.executePendingBindings();
         }
     }
 }

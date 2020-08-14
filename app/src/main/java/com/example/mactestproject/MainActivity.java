@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                setContentView(R.layout.activity_main);
-              startActivity(new Intent(MainActivity.this, GardenActivity.class));
+//              startActivity(new Intent(MainActivity.this, GardenActivity.class));
+              startActivity(new Intent(MainActivity.this, FirstActivity.class));
             }
         });
 //        arrange

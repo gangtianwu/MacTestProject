@@ -1,2 +1,3 @@
+include ':design'
 include ':app'
 rootProject.name = "MacTestProject"
