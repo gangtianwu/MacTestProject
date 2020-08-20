@@ -11,7 +11,6 @@ public interface AsyncExecutor {
   <T> AsyncResult<T> startProcess(Callable<T> task,AsyncCallback<T> callback);
 
 
-
   <T> T endProcess(AsyncResult<T> asyncResult) throws ExecutionException,InterruptedException;
 
 }
