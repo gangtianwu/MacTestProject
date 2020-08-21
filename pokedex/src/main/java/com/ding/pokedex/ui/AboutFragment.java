@@ -2,13 +2,20 @@ package com.ding.pokedex.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.ding.pokedex.R;
+import com.ding.pokedex.databinding.FragmentAboutBinding;
+import com.ding.pokedex.entity.Pokemon;
+import com.ding.pokedex.viewmodel.DashViewModel;
+import com.ding.pokedex.viewmodel.PokeViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +32,8 @@ public class AboutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private FragmentAboutBinding aboutBinding;
+   private DashViewModel dashViewModel;
     public AboutFragment() {
         // Required empty public constructor
     }
@@ -61,6 +69,27 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+        aboutBinding = FragmentAboutBinding.inflate(inflater, container, false);
+        ViewModelProvider viewModelProvider = new ViewModelProvider(getViewModelStore(), new ViewModelProvider.NewInstanceFactory());
+        dashViewModel = viewModelProvider.get(DashViewModel.class);
+        return aboutBinding.getRoot();
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        dashViewModel.getPokemon(mParam1).observe(getViewLifecycleOwner(), new Observer<Pokemon>() {
+            @Override
+            public void onChanged(Pokemon pokemon) {
+                aboutBinding.textViewDescription.setText(pokemon.getXdescription());
+                aboutBinding.textViewHeight.setText(pokemon.getHeight());
+                aboutBinding.textViewWeight.setText(pokemon.getWeight());
+                aboutBinding.textViewEggCycle.setText(pokemon.getCycles());
+                aboutBinding.textViewEggGroups.setText(pokemon.getEgg_groups());
+                aboutBinding.textViewBaseEXP.setText(pokemon.getBase_exp());
+            }
+        });
+
     }
 }

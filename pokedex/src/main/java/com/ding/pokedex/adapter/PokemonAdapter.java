@@ -2,6 +2,7 @@ package com.ding.pokedex.adapter;
 
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +89,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
            itemView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Navigation.findNavController(itemView).navigate(R.id.action_pokeDexFragment_to_dashBoardFragment);
+                   Bundle bundle = new Bundle();
+                   bundle.putString("param1",pokemon.getId());
+
+                   Navigation.findNavController(itemView).navigate(R.id.action_pokeDexFragment_to_dashBoardFragment,bundle);
                }
            });
 

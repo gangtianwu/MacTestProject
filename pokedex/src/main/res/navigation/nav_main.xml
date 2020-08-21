@@ -36,4 +36,14 @@
         android:name="com.ding.pokedex.ui.DashBoardFragment"
         android:label="fragment_dash_board"
         tools:layout="@layout/fragment_dash_board" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.ding.pokedex.ui.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.ding.pokedex.ui.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

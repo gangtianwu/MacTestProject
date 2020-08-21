@@ -1,8 +1,11 @@
 package com.ding.pokedex.entity;
 
+import androidx.room.Entity;
+
 import java.io.Serializable;
 import java.util.List;
 
+@Entity
 public class Pokemon implements Serializable {
     /**
      * name : Bulbasaur
