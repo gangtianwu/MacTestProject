@@ -9,10 +9,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ding.pokedex.BR;
 import com.ding.pokedex.R;
+import com.ding.pokedex.databinding.ItemMenuBinding;
 import com.ding.pokedex.entity.Menu;
 
 import java.util.List;
@@ -30,7 +34,10 @@ public class HomeRyAdapter extends RecyclerView.Adapter<HomeRyAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_menu, parent, false);
-        return new ViewHolder(view);
+        ItemMenuBinding menuBinding = ItemMenuBinding.inflate(inflater, parent, false);
+//        ViewDataBinding binding = DataBindingUtil.inflate(inflater, R.layout.item_menu, parent, false);
+        return new ViewHolder(menuBinding);
+//        return new ViewHolder(view);
     }
 
     @Override
@@ -48,17 +55,39 @@ public class HomeRyAdapter extends RecyclerView.Adapter<HomeRyAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
+        private ItemMenuBinding menuBinding;
+        public ViewHolder(ItemMenuBinding menuBinding) {
+            super(menuBinding.getRoot());
+            this.menuBinding = menuBinding;
+        }
+
         void bindView(Menu menu){
-            TextView leftText = itemView.findViewById(R.id.textViewName);
-            leftText.setText(menu.getName());
-            Log.i("PokeDex ", "bindView: " + menu.getColor());
-            itemView.getBackground().setColorFilter(new PorterDuffColorFilter(itemView.getResources().getColor(menu.getColor()), PorterDuff.Mode.SRC_ATOP));
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_pokeDexFragment);
-                }
-            });
+            //viewBinding
+            if (menuBinding != null){
+                menuBinding.getRoot().getBackground().setColorFilter(new PorterDuffColorFilter(itemView.getResources().getColor(menu.getColor()), PorterDuff.Mode.SRC_ATOP));
+                menuBinding.setClikcListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_pokeDexFragment);
+                    }
+                });
+                menuBinding.setVariable(BR.menu,menu);
+                menuBinding.executePendingBindings();
+
+            }else {
+                //非viewBinding
+                TextView leftText = itemView.findViewById(R.id.textViewName);
+                leftText.setText(menu.getName());
+                Log.i("PokeDex ", "bindView: " + menu.getColor());
+                itemView.getBackground().setColorFilter(new PorterDuffColorFilter(itemView.getResources().getColor(menu.getColor()), PorterDuff.Mode.SRC_ATOP));
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_pokeDexFragment);
+                    }
+                });
+            }
+
         }
     }
 }
